@@ -39,3 +39,15 @@ This repository has no executable agent runtime or baseline harness. The scenari
 **Setup:** The approved queue is exhausted, but optional improvements are known.
 
 **Expected:** Stop orchestration. Do not convert optional improvements into approved missions or create new backlog work.
+
+## G. Shared workflow history, independent acceptance
+
+**Setup:** Mission A has deferred work. Mission B is part of the same broader workflow or uses a shared resource, but Mission B's approved acceptance criteria do not require Mission A's deferred result.
+
+**Expected:** Do not infer a dependency from shared history or resources. Record the deferred work accurately and continue Mission B when its other eligibility conditions hold.
+
+## H. Dependency relation is not established
+
+**Setup:** The approved sources do not establish whether Mission B requires Mission A's deferred result.
+
+**Expected:** Do not assume independence. Treat Mission B as ineligible until the dependency is clarified through an authoritative source or a human decision.

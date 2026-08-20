@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.1 - 2026-08-20
+
+- Clarified deferred-dependency propagation for `continuous-mission-orchestration`: shared workflow history, timing, or resources do not by themselves block an otherwise eligible mission, while an unestablished dependency cannot be assumed independent.
+- Added project-agnostic eval scenarios for false-block and false-continue risks around deferred work.
+
 ## 0.2.0 - 2026-08-20
 
 - Added the experimental `continuous-mission-orchestration` skill and behavior scenarios for approved queues, deferred dependencies, and stop boundaries.

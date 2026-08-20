@@ -17,7 +17,7 @@ For a mission owner, `mission complete` may mean handoff. For an orchestrator, i
 
 ## Deferred work and dependencies
 
-Deferred validation is not a pipeline blocker by itself. Record it accurately and do not claim it passed. Block a downstream mission only when that mission actually depends on the deferred result; otherwise continue eligible independent work in the approved queue.
+Deferred validation is not a pipeline blocker by itself. Record it accurately and do not claim it passed. Block a downstream mission only when that mission's approved requirements or acceptance actually depend on the deferred result; shared workflow history, timing, or resources do not establish a dependency. If authoritative sources do not establish the relation, do not assume independence: treat the next mission as ineligible until it is clarified.
 
 ## Stop and final-response semantics
 
