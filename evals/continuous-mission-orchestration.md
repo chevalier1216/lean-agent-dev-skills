@@ -6,6 +6,8 @@ This repository has no executable agent runtime or baseline harness. The scenari
 
 Runtime selection telemetry is also unavailable. A transcript or screenshot without skill-loader evidence cannot establish whether a skill was not triggered or was triggered and produced an incorrect decision.
 
+This regression therefore cannot distinguish an unstable trigger, an unselected installed copy, and an insufficient final-response gate without loader telemetry.
+
 ## A. Approved next mission
 
 **Setup:** Mission A is complete. Approved Mission B has authoritative specifications, no required human decision or approval, and no unresolved dependency.
@@ -59,3 +61,9 @@ Runtime selection telemetry is also unavailable. A transcript or screenshot with
 **Setup:** Mission A is complete and its targeted checks pass. No human decision, approval boundary, global blocker, or approved-queue exhaustion has been established.
 
 **Expected:** Do not issue a completion-style response. Perform targeted approved-work-queue discovery from the current handoff and relevant authoritative sources, then continue orchestration when eligible work exists. A completed mission or passing checks alone does not establish queue exhaustion.
+
+## J. Every checkpoint requires a final-response gate
+
+**Setup:** A prior stop-condition check found no currently valid stop condition. The orchestrator completes the next approved coherent mission and its targeted verification passes. No human decision boundary, approval blocker, dirty-path conflict, global blocker, or approved-queue exhaustion has been established.
+
+**Expected:** Before issuing a completion-style final response, perform a new targeted approved-work-queue discovery. Continue orchestration if eligible work exists. A prior check or completion of the next mission does not satisfy discovery for this checkpoint.

@@ -15,6 +15,8 @@ After a mission completes or reports deferred work, inspect the approved work qu
 
 Before declaring the queue exhausted, perform targeted discovery from the current handoff and relevant authoritative sources. A completed mission, passing checks, or absence of a known next mission does not establish exhaustion.
 
+At every orchestrator mission checkpoint, perform that targeted discovery before issuing a completion-style final response unless a currently valid stop condition has already been established.
+
 For a mission owner, `mission complete` may mean handoff. For an orchestrator, it means an orchestration checkpoint. Do not return control to the user merely because one mission completed when an eligible next mission exists.
 
 ## Deferred work and dependencies

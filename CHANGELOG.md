@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.2 - 2026-08-20
+
+- Required targeted approved-work-queue discovery at every orchestrator mission checkpoint before a completion-style final response, unless a currently valid stop condition is established.
+- Added regression coverage for repeated checkpoint false-stops and retained the runtime trigger/invocation telemetry limitation.
+
 ## 0.3.1 - 2026-08-20
 
 - Clarified the `continuous-mission-orchestration` trigger at a mission checkpoint and required targeted discovery before declaring an approved queue exhausted.
