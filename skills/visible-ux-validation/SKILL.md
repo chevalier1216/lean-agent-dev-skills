@@ -9,6 +9,18 @@ Validate an implemented user-facing flow through the actual interactive applicat
 
 Automated tests, builds, headless runs, and source inspection alone cannot prove visible UX has passed. This skill validates an implementation; it does not define product requirements or visual direction.
 
+## Validation environment and interaction discipline
+
+Prefer validation environments in this order:
+
+1. background-safe real UI automation;
+2. an isolated GUI session or VM; then
+3. a shared foreground session only when necessary.
+
+An active user on the primary workstation does not by itself block the mission. When the application can expose the needed evidence through internal UI events, state transitions, or viewport screenshots, prefer those methods over OS-level mouse, keyboard, or focus control.
+
+Mark a check as **foreground-required validation** only when its acceptance evidence genuinely depends on shared foreground interaction. If that interaction is temporarily unavailable, record it as deferred validation and continue independent, approved implementation, testing, documentation, and Git work that is safe to perform. Do not treat the deferred check as complete.
+
 ## Validation path
 
 Identify the entry point, user goal, primary interaction path, expected visible states, success condition, and relevant blocked or failure states from authoritative requirements.
@@ -31,9 +43,11 @@ A blocker prevents launch or completion of the required flow, shows an incorrect
 
 If actual visible interaction cannot be performed, report visible validation as incomplete with the concrete limitation. Never claim it passed from automated evidence alone.
 
+If acceptance requires foreground-required validation, do not report a complete Visible UX pass until that validation has been performed successfully.
+
 ## Completion
 
-Report the launch result, exercised flow, verified states, blockers found and resolved, remaining non-blocking issues, and visual evidence produced or the reason it was unavailable.
+Report the launch result, exercised flow, verified states, blockers found and resolved, deferred validation, remaining non-blocking issues, and visual evidence produced or the reason it was unavailable.
 
 ## When not to use
 

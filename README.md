@@ -4,7 +4,7 @@ Experimental, reusable Codex skills for keeping defined implementation missions 
 
 ## Status
 
-Version `0.1.0` is experimental. The repository is the canonical source; user-level installs are copies for execution.
+Version `0.1.1` is experimental. The repository is the canonical source; user-level installs are copies for execution.
 
 ## Included skills
 
