@@ -34,4 +34,4 @@ Do not use this skill to define product requirements, plan an ambiguous mission,
 
 ## Composition
 
-This skill complements established planning, executing-plans, test-driven-development, systematic-debugging, code-review, security-review, Git publication, and visible UX validation workflows. For continuity across multiple already-approved missions, use `continuous-mission-orchestration`. Apply those only when their own trigger condition exists; this skill does not replace or duplicate them.
+This skill complements established planning, executing-plans, test-driven-development, systematic-debugging, code-review, security-review, Git publication, and visible UX validation workflows. For continuity across multiple already-approved missions, use `continuous-mission-orchestration`; for an execution boundary that needs persistent recovery, use `durable-execution-handoff`. Apply those only when their own trigger condition exists; this skill does not replace or duplicate them.

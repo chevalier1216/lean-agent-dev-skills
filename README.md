@@ -4,13 +4,14 @@ Experimental, reusable Codex skills for keeping defined implementation missions 
 
 ## Status
 
-Version `0.2.1` is experimental. The repository is the canonical source; user-level installs are copies for execution.
+Version `0.3.0` is experimental. The repository is the canonical source; user-level installs are copies for execution.
 
 ## Included skills
 
 - `lean-mission-execution`: mission-level context, coordination, verification, and stop discipline for an already-defined implementation mission.
 - `visible-ux-validation`: visible, interactive validation of an implemented user-facing flow.
 - `continuous-mission-orchestration`: continuity and stop semantics across multiple already-approved coherent missions.
+- `durable-execution-handoff`: durable execution checkpoints and minimal recovery handoffs across runtime boundaries.
 
 The skills compose with planning, execution-plan, testing, debugging, review, security, and Git workflows. They do not replace them.
 

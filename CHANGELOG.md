@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.0 - 2026-08-20
+
+- Added the experimental `durable-execution-handoff` skill and behavior scenarios for durable checkpoints, minimal resume handoffs, dirty-work ownership, and stale-handoff precedence.
+- Added a minimal `lean-mission-execution` composition reference for interruption recovery.
+- Recorded that the repository has no executable baseline or with-skill runtime harness; the new scenarios are decision specifications, not benchmark results.
+
 ## 0.2.1 - 2026-08-20
 
 - Clarified deferred-dependency propagation for `continuous-mission-orchestration`: shared workflow history, timing, or resources do not by themselves block an otherwise eligible mission, while an unestablished dependency cannot be assumed independent.
