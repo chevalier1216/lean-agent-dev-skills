@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.1 - 2026-08-20
+
+- Clarified the `continuous-mission-orchestration` trigger at a mission checkpoint and required targeted discovery before declaring an approved queue exhausted.
+- Added a regression scenario for a completed mission whose approved queue has not been proven exhausted, plus a limitation for missing runtime selection telemetry.
+
 ## 0.3.0 - 2026-08-20
 
 - Added the experimental `durable-execution-handoff` skill and behavior scenarios for durable checkpoints, minimal resume handoffs, dirty-work ownership, and stale-handoff precedence.

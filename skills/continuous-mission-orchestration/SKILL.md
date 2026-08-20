@@ -1,6 +1,6 @@
 ---
 name: continuous-mission-orchestration
-description: Use when orchestrating multiple approved coherent missions to decide whether the next mission can continue after a mission checkpoint.
+description: Use when an orchestrator reaches a mission checkpoint or manages approved coherent missions and must decide whether work may continue.
 ---
 
 # Continuous Mission Orchestration
@@ -12,6 +12,8 @@ This skill decides mission-to-mission continuity. It does not define, plan, impl
 ## Orchestration checkpoint
 
 After a mission completes or reports deferred work, inspect the approved work queue. Continue with the next coherent mission when it is already approved, has authoritative specifications sufficient to establish its scope, requires no human decision, crosses no approval boundary, and has no unresolved dependency.
+
+Before declaring the queue exhausted, perform targeted discovery from the current handoff and relevant authoritative sources. A completed mission, passing checks, or absence of a known next mission does not establish exhaustion.
 
 For a mission owner, `mission complete` may mean handoff. For an orchestrator, it means an orchestration checkpoint. Do not return control to the user merely because one mission completed when an eligible next mission exists.
 

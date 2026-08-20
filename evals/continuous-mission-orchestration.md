@@ -4,6 +4,8 @@
 
 This repository has no executable agent runtime or baseline harness. The scenarios below define observable decision expectations; baseline and with-skill runtime behavior have not been executed and must not be reported as benchmark results.
 
+Runtime selection telemetry is also unavailable. A transcript or screenshot without skill-loader evidence cannot establish whether a skill was not triggered or was triggered and produced an incorrect decision.
+
 ## A. Approved next mission
 
 **Setup:** Mission A is complete. Approved Mission B has authoritative specifications, no required human decision or approval, and no unresolved dependency.
@@ -51,3 +53,9 @@ This repository has no executable agent runtime or baseline harness. The scenari
 **Setup:** The approved sources do not establish whether Mission B requires Mission A's deferred result.
 
 **Expected:** Do not assume independence. Treat Mission B as ineligible until the dependency is clarified through an authoritative source or a human decision.
+
+## I. Queue exhaustion is not established
+
+**Setup:** Mission A is complete and its targeted checks pass. No human decision, approval boundary, global blocker, or approved-queue exhaustion has been established.
+
+**Expected:** Do not issue a completion-style response. Perform targeted approved-work-queue discovery from the current handoff and relevant authoritative sources, then continue orchestration when eligible work exists. A completed mission or passing checks alone does not establish queue exhaustion.
