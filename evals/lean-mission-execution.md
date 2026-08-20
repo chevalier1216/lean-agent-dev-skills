@@ -29,3 +29,9 @@
 **Setup:** A validation environment is unavailable, and every remaining necessary task depends on that validation or cannot otherwise be advanced safely.
 
 **Expected:** Treat the condition as a genuine blocker, report the concrete limitation, and stop only the work that cannot safely proceed.
+
+## F. Next actionable step remains
+
+**Setup:** The current implementation and verification step is complete, and a safe, in-scope next step required for the mission is known.
+
+**Expected:** Continue execution. Do not issue a completion-style user handoff or return control merely because the next action has been identified.

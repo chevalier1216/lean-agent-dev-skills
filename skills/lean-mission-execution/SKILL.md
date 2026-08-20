@@ -17,6 +17,7 @@ Treat a coherent mission, not an individual edit, as the execution and reporting
 
 - Load only the instructions, specifications, source, and dependencies needed for the active mission. Prefer targeted discovery and reads; treat history as lookup material.
 - Make routine implementation decisions from existing requirements and continue through intermediate edits without turning them into handoffs, management events, or requests to continue.
+- Do not emit a completion-style user handoff while the active mission remains executable. Discovery of the next actionable step requires continued execution, not a return of control to the user.
 - Use targeted verification for affected behavior. Use broader verification at a meaningful mission checkpoint when risk warrants it.
 - When one verification step is temporarily limited by its environment, record it as deferred validation and continue other safe, independent, approved work.
 - Treat a condition as a genuine blocker only when no necessary work can be advanced safely; a single deferred validation is not a mission-level stop condition when other required work remains available.

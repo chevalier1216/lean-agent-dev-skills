@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2 - 2026-08-20
+
+- Clarified that an executable mission continues when its next actionable step is known; agents must not emit a completion-style handoff prematurely.
+
 ## 0.1.1 - 2026-08-20
 
 - Added background-safe and non-disruptive validation guidance to `visible-ux-validation`.
