@@ -4,12 +4,13 @@ Experimental, reusable Codex skills for keeping defined implementation missions 
 
 ## Status
 
-Version `0.1.2` is experimental. The repository is the canonical source; user-level installs are copies for execution.
+Version `0.2.0` is experimental. The repository is the canonical source; user-level installs are copies for execution.
 
 ## Included skills
 
 - `lean-mission-execution`: mission-level context, coordination, verification, and stop discipline for an already-defined implementation mission.
 - `visible-ux-validation`: visible, interactive validation of an implemented user-facing flow.
+- `continuous-mission-orchestration`: continuity and stop semantics across multiple already-approved coherent missions.
 
 The skills compose with planning, execution-plan, testing, debugging, review, security, and Git workflows. They do not replace them.
 
@@ -23,4 +24,4 @@ Install only the desired skill directory into the user-level agent skill locatio
 
 ## Publication
 
-This repository has not been authorized for public release. Its publication licence must be selected by the owner before any public distribution.
+This public GitHub repository is the canonical source for the included project-agnostic skills. They are released under the [MIT License](LICENSE) and remain experimental. User-level copies in `$HOME/.agents/skills/` are runtime installs, not the source of truth.

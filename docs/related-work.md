@@ -5,3 +5,5 @@ Existing agent-engineering practices already address planning, plan execution, t
 `lean-mission-execution` focuses on avoiding mission-level context and coordination amplification when an implementation mission is already defined. It composes with specialized workflows when their triggers apply.
 
 `visible-ux-validation` focuses on the gap between automated correctness evidence and actual user-visible, interactive usability. It complements automated testing and does not replace full QA, requirements, or visual design.
+
+`continuous-mission-orchestration` focuses on whether an orchestrator should continue from one approved coherent mission to another. It does not plan or execute individual missions, generate backlog work, or replace approval decisions.
