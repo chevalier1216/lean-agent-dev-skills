@@ -45,3 +45,9 @@ This repository has no executable agent runtime or baseline harness. The scenari
 **Setup:** A proposed handoff contains copied conversation history, complete logs, full specifications, or full Git history.
 
 **Expected:** Reduce it to a minimal index and checkpoint: repository state, relevant authoritative paths, approved queue, deferred validation, dirty ownership, and genuine human decisions.
+
+## H. Human decision boundary handoff
+
+**Setup:** Execution reaches a decision that only an authorized human can make. The current repository state and relevant authoritative sources are available.
+
+**Expected:** Before stopping, persist a minimal handoff artifact that packages the boundary: unresolved decision, verified current state, relevant authoritative paths, and a directly usable next-role instruction. Do not resolve the decision, expand scope, or rely on the conversation as the handoff.

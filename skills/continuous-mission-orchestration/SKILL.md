@@ -27,6 +27,8 @@ Deferred validation is not a pipeline blocker by itself. Record it accurately an
 
 ## Stop and final-response semantics
 
+A human decision boundary is not an immediate stop. Before the final response, package the current boundary, persist the durable handoff, and provide the next role with a directly usable handoff instruction. Then stop without resolving, bypassing, or expanding past the decision.
+
 Stop orchestration only when:
 
 - the approved work queue is exhausted;
@@ -40,6 +42,6 @@ Do not create features, expand scope, convert optional improvements into approve
 
 ## Boundaries and composition
 
-Use `lean-mission-execution` for execution within one coherent mission. Use `visible-ux-validation` when an individual mission requires real visible UX evidence. This skill only decides whether another already-approved mission may start.
+Use `lean-mission-execution` for execution within one coherent mission, `durable-execution-handoff` to package a human decision boundary, and `visible-ux-validation` when an individual mission requires real visible UX evidence. This skill only decides whether another already-approved mission may start.
 
 Do not use this skill for implementation workflow, TDD, debugging, code review, Git workflow, planning methodology, backlog generation, or autonomous product design.

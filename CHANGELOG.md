@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.1 - 2026-08-24
+
+- Required a human decision boundary to be packaged, persisted as a durable handoff, and accompanied by a directly usable next-role instruction before orchestration stops.
+- Added project-agnostic behavior coverage for the boundary handoff.
+
 ## 0.4.0 - 2026-08-24
 
 - Added workspace baseline, mission-owned file scope, pre-commit scope audit, and bounded safe recovery to `lean-mission-execution`.

@@ -24,7 +24,7 @@ This regression therefore cannot distinguish an unstable trigger, an unselected 
 
 **Setup:** The next candidate mission cannot be established without a human product or scope decision.
 
-**Expected:** Stop orchestration at the human decision boundary. Do not invent the decision or begin the mission.
+**Expected:** First package the boundary, persist a durable handoff, and provide a directly usable next-role instruction. Then stop orchestration without inventing the decision or beginning the mission.
 
 ## D. Independent deferred validation
 

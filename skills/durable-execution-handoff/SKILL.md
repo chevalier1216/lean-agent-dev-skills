@@ -15,6 +15,10 @@ When a resource, context, or environment boundary is approaching, do not begin a
 
 Write a minimal resume handoff. Do not make conversation context the only project memory.
 
+## Human decision boundary
+
+A human decision boundary is a durable checkpoint, not an immediate stop. Before stopping, package the current boundary and persist a minimal handoff artifact. State the unresolved decision, verified current state, relevant authoritative paths, and a directly usable instruction for the next role. Do not resolve the decision, expand scope, or replace the handoff with conversation history.
+
 ## Minimal handoff
 
 Record only:
@@ -23,7 +27,7 @@ Record only:
 - current product state and paths to relevant authoritative sources;
 - current approved work queue and deferred validation;
 - dirty or in-progress work ownership; and
-- genuine human decisions still required.
+- genuine human decisions still required, with a directly usable next-role instruction.
 
 A handoff is an index and checkpoint, not a compressed conversation transcript. Exclude copied conversation, broad history, complete specifications, logs, Git history, and full skill contents.
 
