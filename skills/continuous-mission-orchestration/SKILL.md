@@ -17,6 +17,8 @@ Before declaring the queue exhausted, perform targeted discovery from the curren
 
 At every orchestrator mission checkpoint, perform that targeted discovery before issuing a completion-style final response unless a currently valid stop condition has already been established.
 
+Before an eligible mission starts, require its execution owner to capture a workspace baseline. Safe automatic recovery within that mission is not a stop condition; only damage to protected pre-existing state that cannot be safely recovered is a genuine blocker.
+
 For a mission owner, `mission complete` may mean handoff. For an orchestrator, it means an orchestration checkpoint. Do not return control to the user merely because one mission completed when an eligible next mission exists.
 
 ## Deferred work and dependencies

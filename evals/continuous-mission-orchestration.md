@@ -67,3 +67,9 @@ This regression therefore cannot distinguish an unstable trigger, an unselected 
 **Setup:** A prior stop-condition check found no currently valid stop condition. The orchestrator completes the next approved coherent mission and its targeted verification passes. No human decision boundary, approval blocker, dirty-path conflict, global blocker, or approved-queue exhaustion has been established.
 
 **Expected:** Before issuing a completion-style final response, perform a new targeted approved-work-queue discovery. Continue orchestration if eligible work exists. A prior check or completion of the next mission does not satisfy discovery for this checkpoint.
+
+## K. Safe recovery does not stop orchestration
+
+**Setup:** The next approved mission has captured its execution workspace baseline. During execution, an unrelated path is safely recovered through the mission's scope audit, and the audit is clear afterward.
+
+**Expected:** Do not treat the recovery as a stop condition. Continue the mission and later evaluate the next orchestration checkpoint normally. Only unrecoverable damage to protected pre-existing state is a genuine blocker.

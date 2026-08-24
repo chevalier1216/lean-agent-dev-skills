@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.0 - 2026-08-24
+
+- Added workspace baseline, mission-owned file scope, pre-commit scope audit, and bounded safe recovery to `lean-mission-execution`.
+- Added minimal `continuous-mission-orchestration` integration: safe recovery is not a stop condition, while unrecoverable protected-state damage is a genuine blocker.
+- Added project-agnostic behavior scenarios for staged protected state, trusted-baseline recovery, mission-created unrelated files, unrecoverable state, and orchestration continuation.
+
 ## 0.3.2 - 2026-08-20
 
 - Required targeted approved-work-queue discovery at every orchestrator mission checkpoint before a completion-style final response, unless a currently valid stop condition is established.

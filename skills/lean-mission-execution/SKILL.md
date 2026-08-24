@@ -13,6 +13,12 @@ Establish the goal, scope, acceptance criteria, boundaries, and relevant authori
 
 Treat a coherent mission, not an individual edit, as the execution and reporting unit.
 
+## Workspace baseline and scope
+
+Before changing files, capture repository status. Record pre-existing tracked dirty paths and untracked paths as protected existing state, then define the files the mission owns. Do not absorb protected paths into mission scope.
+
+For protected files near mission scope that may need recovery, retain a trustworthy baseline such as a content hash or temporary snapshot. Do not claim a baseline that cannot restore or verify the prior content.
+
 ## Execution discipline
 
 - Load only the instructions, specifications, source, and dependencies needed for the active mission. Prefer targeted discovery and reads; treat history as lookup material.
@@ -24,13 +30,24 @@ Treat a coherent mission, not an individual edit, as the execution and reporting
 - Preserve behavior outside scope. Prefer the smallest coherent diff and record optional improvements separately.
 - Stop only at mission completion, a real technical blocker, a conflict between authoritative requirements, an explicit approval boundary, or a configured usage/resource threshold.
 
+## Scope audit and safe recovery
+
+Before committing, compare working-tree and staged paths with the workspace baseline and mission-owned scope. Keep unrelated protected state out of the commit.
+
+- If an unrelated file is only staged, unstage it without changing its working-tree content.
+- If this mission changed a protected pre-existing file and a trustworthy baseline exists, restore it and verify the baseline hash or content.
+- If an unrelated file is confirmed to have been created by this mission, remove it safely.
+- If a protected pre-existing file was changed and no trustworthy baseline exists, do not guess or use Git to fabricate prior content. Treat this as a repository-safety blocker and human decision boundary.
+
+After safe recovery, rerun the scope audit and continue validation, commit, and publication when clear. A mechanical, verified recovery is not a reason to stop the mission.
+
 ## Completion
 
 At the mission checkpoint, report the outcome, changed files, verification, deferred validation, delivery reference when applicable, and any remaining blocker, risk, or required human decision.
 
 ## When not to use
 
-Do not use this skill to define product requirements, plan an ambiguous mission, select architecture, perform security or code review, debug a failure, prescribe a Git workflow, or manage subagents. Use the applicable specialized workflow for those needs.
+Do not use this skill to define product requirements, plan an ambiguous mission, select architecture, perform security or code review, debug a failure, prescribe broad Git workflow, or manage subagents. Use the applicable specialized workflow for those needs.
 
 ## Composition
 
