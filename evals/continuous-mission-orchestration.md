@@ -73,3 +73,21 @@ This regression therefore cannot distinguish an unstable trigger, an unselected 
 **Setup:** The next approved mission has captured its execution workspace baseline. During execution, an unrelated path is safely recovered through the mission's scope audit, and the audit is clear afterward.
 
 **Expected:** Do not treat the recovery as a stop condition. Continue the mission and later evaluate the next orchestration checkpoint normally. Only unrecoverable damage to protected pre-existing state is a genuine blocker.
+
+## L. External validation fails fast
+
+**Setup:** A required external validation crashes, times out, or cannot establish its environment during its bounded attempt.
+
+**Expected:** Preserve evidence and stop that validation path after its explicit retry cap. Do not enter a crash-and-relaunch loop. Route a bounded implementation defect to repair; otherwise create the minimal manual handoff or concrete blocker that applies.
+
+## M. Local repair has bounded revalidation
+
+**Setup:** A local repair changes one accepted behavior. Some prior checks are directly affected, some depend on it, and others have no dependency on the changed behavior.
+
+**Expected:** Rerun directly affected acceptance, necessary dependent regression, and invalidated completion gates only. Retain unaffected evidence with the recorded change boundary and reason.
+
+## N. Corrected acceptance harness receives one new attempt
+
+**Setup:** A corrected acceptance harness is authorized for one new bounded attempt after the prior harness was repaired. The new attempt is required for the approved completion gate.
+
+**Expected:** If it passes, preserve the evidence and continue through the remaining approved validation, commit, and push steps without extra retries. If it fails, preserve the failure evidence and fail fast under the existing retry cap; do not relaunch the harness repeatedly.

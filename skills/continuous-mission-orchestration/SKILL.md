@@ -19,6 +19,10 @@ At every orchestrator mission checkpoint, perform that targeted discovery before
 
 Before an eligible mission starts, require its execution owner to capture a workspace baseline. Safe automatic recovery within that mission is not a stop condition; only damage to protected pre-existing state that cannot be safely recovered is a genuine blocker.
 
+For native or external validation, use one bounded attempt with an explicit retry cap. On crash, timeout, or inability to establish the test environment, fail that validation path fast and preserve its evidence; do not enter a crash-and-relaunch loop. Route a bounded implementation failure back to repair. Use a minimal manual acceptance handoff or a concrete blocker only when the limitation is outside the executor's safe control.
+
+After a local repair, determine its impact before rerunning validation. Rerun directly affected acceptance, necessary dependent regression, and any completion gate whose evidence the change invalidated. Retain unaffected evidence with its boundary and reason for not rerunning it.
+
 For a mission owner, `mission complete` may mean handoff. For an orchestrator, it means an orchestration checkpoint. Do not return control to the user merely because one mission completed when an eligible next mission exists.
 
 ## Deferred work and dependencies

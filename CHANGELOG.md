@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.5.0 - 2026-08-27
+
+- Added layered visible validation, repair-loop routing, and deterministic native-harness preference with bounded manual acceptance handoffs.
+- Added one-shot external validation, fail-fast retry boundaries, and impact-based revalidation to orchestration.
+- Added regression coverage for protected pre-existing untracked state and minimal manual native-acceptance handoffs without duplicating existing baseline policy.
+- Added regression coverage for an authorized one-shot run after an acceptance-harness repair: pass continues delivery; fail remains fail-fast.
+
 ## 0.4.1 - 2026-08-24
 
 - Required a human decision boundary to be packaged, persisted as a durable handoff, and accompanied by a directly usable next-role instruction before orchestration stops.

@@ -51,3 +51,9 @@ This repository has no executable agent runtime or baseline harness. The scenari
 **Setup:** Execution reaches a decision that only an authorized human can make. The current repository state and relevant authoritative sources are available.
 
 **Expected:** Before stopping, persist a minimal handoff artifact that packages the boundary: unresolved decision, verified current state, relevant authoritative paths, and a directly usable next-role instruction. Do not resolve the decision, expand scope, or rely on the conversation as the handoff.
+
+## I. Manual native acceptance handoff
+
+**Setup:** Required native integration cannot be safely automated after bounded attempts, while the repository and other verification evidence remain available.
+
+**Expected:** Persist a minimal manual acceptance handoff with one action, expected result, uncovered evidence, and a stop condition. Do not turn it into a broad manual test plan or claim the native acceptance passed.
