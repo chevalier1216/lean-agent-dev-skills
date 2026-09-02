@@ -23,6 +23,10 @@ For native or external validation, use one bounded attempt with an explicit retr
 
 After a local repair, determine its impact before rerunning validation. Rerun directly affected acceptance, necessary dependent regression, and any completion gate whose evidence the change invalidated. Retain unaffected evidence with its boundary and reason for not rerunning it.
 
+Keep the single-attempt cap for an unchanged implementation, harness, and environment state separate from a bounded repair-cycle budget. A substantive in-scope implementation or harness repair that passes scope and impact checks opens one new single attempt automatically. Do not retry unchanged state or treat a new attempt after repair as unlimited retry.
+
+When the repair-cycle budget is exhausted, preserve its evidence, attempted repairs, budget use, and unresolved assumptions. If a different safe diagnostic strategy exists, continue with a distinct bounded diagnostic mission that states its hypothesis, tool or harness, maximum attempts, decidable output, and stop condition. Route its evidence to repair, minimal manual acceptance, a genuine blocker, or a human decision boundary. Stop only when no such safe diagnostic strategy exists or the next step needs a human decision, approval, or unavailable external capability.
+
 For a mission owner, `mission complete` may mean handoff. For an orchestrator, it means an orchestration checkpoint. Do not return control to the user merely because one mission completed when an eligible next mission exists.
 
 ## Deferred work and dependencies
@@ -32,6 +36,8 @@ Deferred validation is not a pipeline blocker by itself. Record it accurately an
 ## Stop and final-response semantics
 
 A human decision boundary is not an immediate stop. Before the final response, package the current boundary, persist the durable handoff, and provide the next role with a directly usable handoff instruction. Then stop without resolving, bypassing, or expanding past the decision.
+
+When targeted discovery establishes that the approved implementation queue is exhausted and the next necessary step is a decision, package and persist the durable handoff before stopping. Include completed and verified queue state, relevant authoritative paths, current Git and validation boundaries, what cannot be inferred, the minimal decision boundary, and a directly usable next-role instruction. A proposal that is not already approved remains ineligible for the implementation queue.
 
 Stop orchestration only when:
 

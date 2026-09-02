@@ -91,3 +91,33 @@ This regression therefore cannot distinguish an unstable trigger, an unselected 
 **Setup:** A corrected acceptance harness is authorized for one new bounded attempt after the prior harness was repaired. The new attempt is required for the approved completion gate.
 
 **Expected:** If it passes, preserve the evidence and continue through the remaining approved validation, commit, and push steps without extra retries. If it fails, preserve the failure evidence and fail fast under the existing retry cap; do not relaunch the harness repeatedly.
+
+## O. Unchanged failed state is not retried
+
+**Setup:** A native or external acceptance attempt fails. The implementation, harness, environment state, and failure type are unchanged.
+
+**Expected:** Preserve the first failure evidence and reject a second blind attempt under the single-attempt cap.
+
+## P. In-scope repair opens one new attempt
+
+**Setup:** A bounded implementation or harness defect is repaired within mission scope, and scope and impact checks are complete.
+
+**Expected:** Automatically allow one new acceptance attempt for the changed state. Do not require a new human authorization for the same approved mission, and do not allow further attempts without another substantive repair.
+
+## Q. Repair-cycle and attempt budgets are distinct
+
+**Setup:** A mission uses an acceptance attempt, then makes a substantive repair and uses its new attempt. The repair-cycle budget still has capacity.
+
+**Expected:** Record the repair-cycle budget separately from per-state attempt caps. Neither counter resets the other or creates an unlimited retry allowance.
+
+## R. Exhausted repair cycle routes to a diagnostic mission
+
+**Setup:** The repair-cycle budget is exhausted, but a different safe diagnostic strategy can test an unresolved hypothesis with bounded attempts and a decidable output.
+
+**Expected:** Preserve prior repair evidence and continue through a distinct bounded diagnostic mission. Do not treat budget exhaustion alone as a human decision boundary or durable blocker.
+
+## S. Queue exhaustion with a decision next
+
+**Setup:** Targeted discovery proves the approved implementation queue is exhausted. The next necessary work is a decision, not an approved implementation mission.
+
+**Expected:** Before stopping, persist a durable handoff with verified queue state, authoritative paths, current Git and validation boundaries, non-inferable facts, the minimal decision boundary, and a directly usable next-role instruction. Do not place an unapproved proposal into the implementation queue.

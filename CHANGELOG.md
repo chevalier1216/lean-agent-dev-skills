@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.1 - 2026-09-02
+
+- Distinguished unchanged-state attempt caps from repair-cycle budgets, allowing one new bounded acceptance attempt after a substantive in-scope repair.
+- Added bounded diagnostic-mission routing after repair-cycle exhaustion and durable decision handoff when an approved implementation queue is exhausted.
+- Added project-agnostic regression coverage for retry boundaries, repair-to-attempt continuation, diagnostic routing, and queue-exhaustion closeout.
+
 ## 0.5.0 - 2026-08-27
 
 - Added layered visible validation, repair-loop routing, and deterministic native-harness preference with bounded manual acceptance handoffs.
