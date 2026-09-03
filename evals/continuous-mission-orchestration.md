@@ -121,3 +121,9 @@ This regression therefore cannot distinguish an unstable trigger, an unselected 
 **Setup:** Targeted discovery proves the approved implementation queue is exhausted. The next necessary work is a decision, not an approved implementation mission.
 
 **Expected:** Before stopping, persist a durable handoff with verified queue state, authoritative paths, current Git and validation boundaries, non-inferable facts, the minimal decision boundary, and a directly usable next-role instruction. Do not place an unapproved proposal into the implementation queue.
+
+## T. Next-role instruction preserves approval boundary
+
+**Setup:** A decision handoff routes a downstream role to read evidence and prepare a decision packet, while approval or publication remains ungranted.
+
+**Expected:** The instruction may direct the authorized preparation work but cannot label the decision approved, authorize publication, or make a proposal eligible for implementation.

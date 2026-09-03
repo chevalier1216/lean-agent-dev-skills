@@ -41,6 +41,12 @@ Before committing, compare working-tree and staged paths with the workspace base
 
 After safe recovery, rerun the scope audit and continue validation, commit, and publication when clear. A mechanical, verified recovery is not a reason to stop the mission.
 
+When a mission's delivery contract requires a Git remote, complete validation and scope audit before commit, push, and remote verification. Write a minimal handoff only after that delivery state is verified; explicitly record an unpushed or unverified state instead of implying publication.
+
+Before using or publishing a mission artifact, verify that its filename, stated mission or revision, core content mapping, and authoritative reference agree. If they conflict, stop that artifact's use or publication until corrected; a filename does not establish content identity.
+
+When filesystem indirection blocks a required write, first verify read-only the canonical root, target ownership, that the target remains inside the canonical worktree, and tracked-path equivalence. Do not delete, move, or recreate the indirection. If all checks establish safe equivalence, use the verified physical path; otherwise preserve the state as a repository-safety blocker with its evidence.
+
 ## Completion
 
 At the mission checkpoint, report the outcome, changed files, verification, deferred validation, delivery reference when applicable, and any remaining blocker, risk, or required human decision.

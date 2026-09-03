@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.2 - 2026-09-03
+
+- Required resumptions to refresh relevant installed Skill identity and made repository-relative handoff sources the portable default.
+- Preserved approval and publication boundaries in next-role instructions, added conditional Git remote verification before delivery handoff, artifact identity checks, and safe filesystem-indirection handling.
+- Added project-agnostic eval coverage for these resume, delivery, identity, and filesystem safety boundaries.
+
 ## 0.5.1 - 2026-09-02
 
 - Distinguished unchanged-state attempt caps from repair-cycle budgets, allowing one new bounded acceptance attempt after a substantive in-scope repair.

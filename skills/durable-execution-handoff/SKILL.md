@@ -33,9 +33,11 @@ A handoff is an index and checkpoint, not a compressed conversation transcript. 
 
 ## Resume
 
-Use the existing repository; do not recreate it. Read project instructions, verify actual branch, HEAD, remote, and dirty state, then read the minimal handoff. Load only the authoritative sources and installed skills it points to, verify dirty-work ownership, and resume the highest-priority eligible approved mission.
+Use the existing repository; do not recreate it. Read project instructions, verify actual branch, HEAD, remote, and dirty state, then read the minimal handoff. Before resuming across a context, usage, or agent boundary, refresh the relevant installed skills from their current discoverable source and record their identity or version when available. If current skill identity cannot be determined, record that limitation rather than claiming the latest instructions were applied. Load only the authoritative sources and installed skills the handoff points to, verify dirty-work ownership, and resume the highest-priority eligible approved mission.
 
 When a handoff conflicts with an authoritative source or actual Git state, the authoritative source and actual Git state win. Record the handoff as stale rather than following the conflicting claim.
+
+Prefer repository-relative authoritative paths with repository and canonical-remote identity in a handoff. Use a machine-local absolute path only as supplemental environment location, marked as non-portable; it must not be the sole durable source.
 
 ## Safety and boundaries
 

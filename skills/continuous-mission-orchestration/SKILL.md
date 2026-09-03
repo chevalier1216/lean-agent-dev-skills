@@ -37,6 +37,8 @@ Deferred validation is not a pipeline blocker by itself. Record it accurately an
 
 A human decision boundary is not an immediate stop. Before the final response, package the current boundary, persist the durable handoff, and provide the next role with a directly usable handoff instruction. Then stop without resolving, bypassing, or expanding past the decision.
 
+A next-role instruction may route only already-authorized reading, review, or execution. It cannot confer approval, authorize publication, or label an unresolved decision as approved.
+
 When targeted discovery establishes that the approved implementation queue is exhausted and the next necessary step is a decision, package and persist the durable handoff before stopping. Include completed and verified queue state, relevant authoritative paths, current Git and validation boundaries, what cannot be inferred, the minimal decision boundary, and a directly usable next-role instruction. A proposal that is not already approved remains ineligible for the implementation queue.
 
 Stop orchestration only when:
