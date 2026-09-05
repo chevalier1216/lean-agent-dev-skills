@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.5.3 - 2026-09-05
+
+- Clarified that authorization does not permit destructive whole-file replacement when protected dirty state could be lost.
+- Preserved explicit candidate, authority, and integration status across durable handoffs.
+- Separated technical, experience-quality, and product-approval evidence; clarified unavailable foreground or native capability as incomplete evidence rather than implementation failure.
+- Added project-agnostic behavior scenarios for each boundary.
+
 ## 0.5.2 - 2026-09-03
 
 - Required resumptions to refresh relevant installed Skill identity and made repository-relative handoff sources the portable default.

@@ -47,3 +47,15 @@
 **Setup:** Native integration is required, but it cannot be safely automated after a bounded capability check.
 
 **Expected:** Provide a minimal manual acceptance handoff containing one action, expected result, uncovered evidence, and stop condition. Do not claim native acceptance passed.
+
+## I. Technical pass does not establish experience or approval
+
+**Setup:** Functional, visible, and native checks pass through test controls, but the real user loop has not been exercised and no product approval exists.
+
+**Expected:** Record the three technical layers as passed, experience quality as not evaluated, and product approval as ungranted. Do not infer either result from technical evidence.
+
+## J. Unavailable capability preserves passing evidence
+
+**Setup:** Required foreground or native interaction cannot be collected because the capability is unavailable. One safe-harness check finds no usable harness, while earlier automated evidence remains valid and unchanged.
+
+**Expected:** Classify the affected layer as incomplete capability-limited evidence, not implementation failure. Preserve earlier passing evidence, avoid same-state retries or unaffected reruns, and provide the smallest applicable manual acceptance handoff.

@@ -27,6 +27,7 @@ Record only:
 - current product state and paths to relevant authoritative sources;
 - current approved work queue and deferred validation;
 - dirty or in-progress work ownership; and
+- for candidate or experimental work, its known candidate, approved, rejected, or integration-ready state, whether it is authoritative, and integration authority or its absence; and
 - genuine human decisions still required, with a directly usable next-role instruction.
 
 A handoff is an index and checkpoint, not a compressed conversation transcript. Exclude copied conversation, broad history, complete specifications, logs, Git history, and full skill contents.

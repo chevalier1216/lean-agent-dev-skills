@@ -27,11 +27,13 @@ Identify the entry point, user goal, primary interaction path, expected visible 
 
 Classify required evidence by layer and record each result separately:
 
-1. headless or automated checks validate data, state, contracts, and automatable behavior;
-2. embedded or in-application visible checks validate screens, flows, and application interaction; and
-3. native OS integration checks validate operating-system behavior or external-application interaction.
+1. functional or state checks validate data, state, contracts, and automatable behavior;
+2. embedded or in-application visible checks validate screens, flows, and application interaction;
+3. native integration checks validate operating-system behavior or external-application interaction;
+4. experience-quality evaluation establishes whether the real user loop was exercised and assessed, when required; and
+5. product approval records the authorized product decision, when required.
 
-No layer substitutes for another. Native OS integration is a completion gate only when the approved requirements reach that layer.
+No layer substitutes for another. Passing technical or visible layers does not establish experience quality or product approval. If test or debug controls prove state transitions without exercising the real user loop, report experience quality as not evaluated. Native integration is a completion gate only when approved requirements reach that layer.
 
 Run required targeted automated checks, launch the real application or suitable development build, and exercise the primary path using actual controls. Verify, where applicable:
 
@@ -45,13 +47,13 @@ Complete the acceptance path end-to-end when technically possible. Capture a scr
 
 Placeholders and temporary art do not block functional validation when requirements permit them.
 
-For native OS or external integration, prefer a bounded deterministic automated harness over manual interaction. The harness should verify required input routing and lifecycle outcomes for the approved behavior. If safe automation is genuinely unavailable, create a minimal manual acceptance handoff with one action, its expected result, the evidence not covered, and a stop condition.
+For native OS or external integration, prefer a bounded deterministic automated harness over manual interaction. The harness should verify required input routing and lifecycle outcomes for the approved behavior. Check once for an existing safe harness. If safe automation is genuinely unavailable, create a minimal manual acceptance handoff with one action, its expected result, the evidence not covered, and a stop condition; do not rerun unaffected evidence.
 
 ## Result classification
 
 A blocker prevents launch or completion of the required flow, shows an incorrect visible state, hides the next action, or causes crash, corruption, or unusable interaction. For a reproducible, in-scope implementation failure, record the evidence, return to the repair loop, and rerun affected acceptance before classifying the result. Do not treat a repairable defect as a human decision boundary or expand the mission into unrelated polish.
 
-If actual visible interaction cannot be performed, report visible validation as incomplete with the concrete limitation. Never claim it passed from automated evidence alone.
+If actual visible interaction cannot be performed, report visible validation as incomplete with the concrete limitation. If foreground or native capability is unavailable, classify that layer as incomplete evidence rather than an implementation failure unless an implementation defect was observed. Never claim it passed from automated evidence alone.
 
 If acceptance requires foreground-required validation, do not report a complete Visible UX pass until that validation has been performed successfully.
 

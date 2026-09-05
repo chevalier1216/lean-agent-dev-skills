@@ -34,6 +34,8 @@ For protected files near mission scope that may need recovery, retain a trustwor
 
 Before committing, compare working-tree and staged paths with the workspace baseline and mission-owned scope. Keep unrelated protected state out of the commit.
 
+Authorization to change a file does not authorize a destructive write method. Before replacing a whole file, inspect its current content, diff, and baseline. Prefer a targeted patch that preserves protected state. Replace a whole file only when it is proven mission-owned and no protected content can be discarded.
+
 - If an unrelated file is only staged, unstage it without changing its working-tree content.
 - If this mission changed a protected pre-existing file and a trustworthy baseline exists, restore it and verify the baseline hash or content.
 - If an unrelated file is confirmed to have been created by this mission, remove it safely.
